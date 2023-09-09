@@ -6,7 +6,7 @@
 #include <regex>
 
 using namespace std;
-
+// My short term objective is to write this code - this one was written by ai from a python script i provided it
 string getFormattedTime() {
     time_t now = time(0);
     struct tm tstruct;
