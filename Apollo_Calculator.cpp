@@ -1,3 +1,8 @@
+/**
+ * \file Apollo_calculator.cpp
+ * \brief
+ * \author Fares Majdoub
+ */
 # include <iostream>
 # include <math.h>
 # include <map>
