@@ -1,146 +1,172 @@
-# include <iostream>
-# include <map>
-# include <random>
-# include <array>
-using namespace std; 
+#include <iostream>
+#include <map>
+#include <ctime>
+#include <vector>
+#include <cstdlib>
 
+using namespace std;
 
-// used to show the maps in bank class 
-template <typename Container>
-void printElements(const Container& container) {
-    for (const auto& element : container) {
-        cout << element << endl;
+int random_number() {
+        long long randomCode = 1 + rand() % 9; // Generate the first digit (1-9)
+    for (int i = 1; i < 12; ++i) {
+        randomCode = randomCode * 10 + rand() % 10; // Generate the remaining digits (0-9)
     }
+    return randomCode;
 }
 
-// A bank account number generator using Mersenne Twister engine
+class BankAccount {
 
+private:
 
-    // Method to add account - Holder name 
-    // Method to display details
-    // display all accounts
-    //close an account 
-
-
-class BankAccount{
-
-    private:
-
-    int account_number;
-    string holder_name;
+    string holdername;
+    string gender;
     double balance;
-    map < int , double> display_balance;
-    int account_number_generator() {
-        mt19937 mt(static_cast<long unsigned int>(std::time(nullptr)));
-        uniform_int_distribution<int> dist(100000000000, 999999999999);
-        return dist(mt);
-    }
-
-    public:
-
-    BankAccount(int an, string hn, double b){
-        account_number = account_number_generator();
-        holder_name = hn;
-        balance = b;
-        
-    }
-    int account_number_generator(string holder_name){
-        mt19937 mt(static_cast<long unsigned int>(std::time(nullptr)));
-        uniform_int_distribution<int> dist(100000000000, 999999999999);
-        int account_number = dist(mt);
-        return account_number;
-    }
-    void add_acount(){
-        cout <<"Holder has the following name"<< holder_name ;
-        cout <<holder_name << "'s account's number is" ;
-        cout << account_number_generator(holder_name);
-    }
+    
 
     
 
-    double deposit_money(double amount){
-
-        double new_balance = balance + amount;
-        return new_balance;
-        cout << "We confirm a deposit of " << amount << endl;
+public:
+    int number;
+    // initializing the BankAccount constructor
+    BankAccount(string hn, double b, int n, string g) {
+        holdername = hn;
+        balance = b;
+        number = random_number();
+        gender = g;
     }
 
-    double withdraw_money(double wamount){
-        if (wamount > balance){
-            cout << "you can only withdraw a maximum of"<< balance;
-            return 0;
-        }else{
-            double new_balance = balance - wamount;
-            return new_balance;
-            cout << "We confirm a withdrawl of " << wamount << endl;
+    void create_account(string holdername, string gender) {
+        if (gender == "m" || gender == "M") {
+            cout << " " << endl;
+            cout << "Mr " << holdername << " has successfully created his bank account" << endl;
+            cout << " " << endl;
+            cout << "account balance is 0$" << endl;
+            cout << " " << endl;
+            cout << "account number is: " << number;
+            cout << " " << endl;
+        } else if (gender == "f" || gender == "F") {
+            cout << "Ms " << holdername << " has successfully created her bank account" << endl;
+            cout << " " << endl;
+            cout << "account balance is 0$" << endl;
+            cout << " " << endl;
+            cout << "account number is: " << number;
+            cout << " " << endl;
         }
-        
+    }
+    void deposit_money(double amount){
+        if (amount == 0){
+            cout << " " << endl;
+            cout << "Sorry you can not deposit 0 or less!"<<endl;
+        }else{
+            double new_balance = balance + amount;
+            cout << " " << endl;
+            cout << amount << "Has been deposited successfully to account number: " << number << endl;
+            cout << " " << endl;
+            cout <<"New account balance is: " << new_balance << "$" <<endl; 
+            cout << " " << endl;
+        }
+    }
+    void withdraw_money(double amount){
+        if (amount > balance){
+            cout << "Sorry you can not withdraw more than your balance that is: " << balance << "$" <<endl;
+        }else{
+            double new_balance = balance - amount;
+            cout << "You succesfully withdrawed " << amount << "$" <<endl;
+            cout<< "Your new balance is: "<< new_balance << "$" << endl;
+        }
+    }
+    void view_information(int number){
+        cout << "Account number: " << number <<endl;
+        cout << "Belong to:  " << holdername << endl;
+    }
+};
+
+class UniversalBankInfo {
+    private:
+
+    int account_number ;
+    string holder_name; 
+    double balance; 
+
+    public:
+
+    UniversalBankInfo(int ac, string hn, double b){
+        account_number = ac;
+        holder_name = hn; 
+        balance = b;
+    }
+    void display_info(){
+        cout << account_number << endl;
+        cout << holder_name << endl;
+        cout << balance <<endl;
+    }
+    void special_display(int number){
+        cout << holder_name <<endl;
+        cout << balance << endl;
     }
 
 };
 
 
 
+int main() {
+        cout << " " << endl;
+        cout <<"Welcome to iBankManager - Your Digital Banking Assistant" <<endl;
+        cout << " " << endl;
+        cout << "Choose an option " << endl;
+        cout << " " << endl;
+        cout << "C. Create Account " << endl;
+        cout << " " << endl;
+        cout << "D. Deposit Money" << endl;
+        cout << " " << endl;
+        cout << "W. Withdraw Money" << endl;
+        cout << " " << endl;
+        cout << "I. View Account Information" << endl;
+        cout << " " << endl;
+        cout << "X. Exit " << endl;
+        cout << " " << endl;  
 
-int main(void){
-    string choice; 
-    cout<<" "<<endl;
-    cout << "Welcome to iBankManager" << endl;
-    cout << " "<< endl;
-    cout << "How can i help you today?" << endl;
-    cout << " "<< endl;
-    cout << "Choose the letter and type it in the terminal" << endl;
-    cout << " "<< endl;
-    cout << "n - TO OPEN A NEW ACCOUNT" << endl; 
-    cout << " "<< endl;
-    cout << "d - TO DEPOSIT IN AN ACCOUNT" << endl; 
-    cout << " "<< endl;
-    cout << "w - TO WITHDRAW MONEY " << endl; 
-    cout << " "<< endl;
-    cout << "s - TO SHOW ACCOUNT DETAILS" << endl;
-    cout << " "<< endl;
-    cout << "c - TO CLOSE ACCOUNT" << endl;
-    cout << " "<< endl;
-    cout << "e - TO EXIT iBankManager" << endl;
-    cout << " "<< endl;
-    
+        string choice; 
+        string fullname;
+        string gender; 
+        BankAccount new_account(fullname, 0, random_number(), gender);
+        UniversalBankInfo new_account_i(random_number(), fullname, 0.0);
+
     while (true){
-        cout<<"ENTER YOUR CHOICE: ";
-        cin>> choice ;
 
-        if (choice == "n"){
-            // add new account
+        cout <<"Enter your chosen option in this field: " ;
+        cin >> choice ;
 
-        }else if(choice == "d"){
-            // deposit money
+        if (choice == "c" || choice == "C"){
+            
+            cout << "Enter your full name: " ;
+            cin.ignore();
+            getline(cin, fullname);
+            cout << "Enter the client's gender: " ;
+            cin >> gender; 
 
-        }else if(choice == "w"){
-            // withdraw money
+           
+            new_account_i.display_info();
+            new_account.create_account(fullname, gender);
+            cout << " " <<endl;
             
-        }else if(choice == "s"){
-            // show account details
+
+        }else if (choice == "d" || choice == "D"){
+            int number; 
+            cout<< "Enter account number: " ; 
+            cin >> number; 
+            new_account_i.special_display(number);
+
             
-        }else if(choice == "c"){
-            // close an account
-            
-        }else if(choice == "e"){
-             cout << " " << endl; 
-            cout << "We hope you had a refined experience , see you soon"<<endl;
-            cout << "Closing iBankManger" <<endl; 
+        }else if (choice == "w" || choice == "W"){
+        
+        }else if (choice == "i" || choice == "I"){
+        
+        }else if (choice == "x" || choice == "X"){
+            cout << "Closing the program..." << endl;
+            cout << "See you soon" << endl;
             break;
-        }else{
-            cout << " " << endl; 
-            cout << "Sorry , you might have entered a wrong letter , please try again"<<endl;
-            cout << " " << endl; 
-            cout << "Here are the possible entries " << endl; 
-            array <string,6> possible_operations = {"n" ,"d" ,"w" ,"s" ,"c" ,"e"};
-            printElements(possible_operations);
-            cout << " " << endl; 
-            continue;
+    }
         }
 
-
-    }
-
-
-}
+    return 0;}
