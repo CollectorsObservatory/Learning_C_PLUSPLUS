@@ -1,6 +1,7 @@
 # include <iostream>
 # include <array>
 # include <vector>
+
 using namespace std;
 
 
@@ -89,14 +90,50 @@ void operations_array(void){
 
 }
 
+void printing_vector(void){
+        vector <int> myVector;
+        myVector.push_back(1);
+        myVector.push_back(2);
+        myVector.push_back(3);
+        myVector.push_back(4);
+        bool find = false; 
+        int userInput ;
+        cout << "Enter number: " ;
+        cin >> userInput ;
+        for(int i = 0; i < myVector.size() ; i++){
+            if (myVector[i] == userInput){
+            find= true;
+        }
+    }
+        if (find){
+            cout << userInput << " is found in vector" ;
+    }   else {
+            cout << userInput << " is not found in vector" ;
+    }
+
+}
+void generate_random(void){
+    int userinput;
+    cout << "Enter Number: " ;
+    cin >> userinput ; 
+    for (int i = 0; i < userinput ; i++){
+          for (int i = 0; i < 12; ++i) {
+            int digit = rand() % 10; // Generate a random digit (0-9)
+    }
+    }
+}
 
 
 // calling them in main not to leave it empty
 int main(void){
-
     infinite_vector();
     myfirstvector();
     pointer();
     operations_array();
+    printing_vector();
+    generate_random();
 
 }
+
+
+
