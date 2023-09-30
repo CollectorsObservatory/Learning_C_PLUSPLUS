@@ -1,9 +1,9 @@
 # include <iostream>
 # include <array>
 # include <vector>
-
+# include <map>
 using namespace std;
-
+// Week 3 and week 4 general review 
 
 template <typename Container>
 void printElements(const Container& container) {
@@ -122,6 +122,80 @@ void generate_random(void){
     }
     }
 }
+void console_input(void){
+    // reviewing console in modes and switching between them 
+    string fullname; 
+    int age ; 
+    cout << "Enter your full name: " << endl; 
+    getline(cin, fullname);
+    cout << "Enter your age: " << endl; 
+    cin >>age;
+    cout << "Full name is: " << fullname << endl;
+    cout <<"Your age is: " << age << endl;
+}
+
+void array_printing(void){
+     // trying an easy way to print vector and array items
+    array <int, 3> numbers = {1,2,3} ; 
+    for(int number : numbers){
+        cout << number <<" ," ;
+    }
+}
+
+void vector_printing(void){
+    // printing vector one under the other 
+
+    vector <string > names ; 
+    names.push_back("mark");
+    names.push_back("John");
+    names.push_back("paul");
+    for(string name: names){
+        cout << name << " " <<endl;;
+        cout <<" " << endl; 
+    }
+}
+
+void map_printing(void){
+    // we can use const auto&Var to ignore var type for more flexible use
+    map < string , int > currency ; 
+    currency["dollar"] = 100;
+    currency["Dinar"] = 500;
+    currency["Euro"] = 600;
+    for (pair<string, int> pair: currency){
+        cout << pair.first << ": " << pair.second << endl; 
+        cout << " " << endl;
+    }
+}
+
+void finding_item_vetor(void){
+     vector <string > names ; 
+    names.push_back("mark");
+    names.push_back("John");
+    names.push_back("paul");
+    bool finding_name = false; 
+    for (int i=0 ; i < names.size() ; i ++){
+        if(names[i] == "mark"){
+            finding_name =true ;
+        }
+    }
+    if (finding_name){
+        cout << "Success !" << endl ;
+    }else{
+        cout << "failed! " << endl;
+    }
+}
+
+void table(void){
+    // declaring a 2d table
+     array<array<int, 3>, 5> myTable = {{
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9},
+        {10, 11, 12},
+        {13, 14, 15}
+    }};
+   
+}
 
 
 // calling them in main not to leave it empty
@@ -132,7 +206,6 @@ int main(void){
     operations_array();
     printing_vector();
     generate_random();
-
 }
 
 
