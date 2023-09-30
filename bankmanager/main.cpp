@@ -3,7 +3,8 @@
 #include <ctime>
 #include <vector>
 #include <cstdlib>
-
+// the implentation does not work for now , could not dynamically update the client
+// map to store information to be re-used
 using namespace std;
 
 int random_number() {
@@ -21,8 +22,6 @@ private:
     string holdername;
     string gender;
     double balance;
-    
-
     
 
 public:
@@ -139,7 +138,7 @@ int main() {
 
         if (choice == "c" || choice == "C"){
             
-            cout << "Enter your full name: " ;
+            cout << "Enter your full name: " ; 
             cin.ignore();
             getline(cin, fullname);
             cout << "Enter the client's gender: " ;
@@ -159,8 +158,13 @@ int main() {
 
             
         }else if (choice == "w" || choice == "W"){
+            // the implentation does not work for now , could not dynamically update the client
+            // map to store information to be re-used
         
         }else if (choice == "i" || choice == "I"){
+             // the implentation does not work for now , could not dynamically update the client
+            // map to store information to be re-used
+        
         
         }else if (choice == "x" || choice == "X"){
             cout << "Closing the program..." << endl;
