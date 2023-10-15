@@ -1,3 +1,17 @@
+"""
+Author: CollectorsObservatory 
+Date: 2023-10-15 
+
+Description:
+    This Python script serves as the foundational framework upon which the corresponding C++ bank management system 
+    is built. It provides basic functionalities for creating a bank account, depositing money, withdrawing money,
+    and viewing account information. The script makes use of classes and methods to encapsulate the behavior 
+    of a bank account and provides user interface options to interact with the bank account objects.
+    
+    The account number is randomly generated and stored in a list, while the account data, including the holder's
+    name and balance, is stored in a dictionary for easy retrieval and modification. Error handling and data validation
+    are implemented to ensure the user inputs are correct and to provide feedback when the inputs are invalid.
+"""
 import random
 import datetime
 
