@@ -1,3 +1,17 @@
+/**
+ * @file validationFormat.cpp
+ * @author CollectorsObservatory
+ * @date 2023-10-15
+ *
+ * @brief Ce fichier contient des fonctions pour valider différents formats,
+ * notamment pour les numéros de téléphone et les numéros RAMQ.
+ *
+ * Les fonctions de ce fichier permettent de vérifier la validité d’un numéro
+ * de téléphone en suivant un format spécifique et en s'assurant que le code
+ * régional est valide. Elle vérifie également le format des numéros RAMQ
+ * en utilisant le nom, le prénom, la date de naissance et le sexe de l'individu.
+ *
+ */
 #include <iostream>
 #include "validationFormat.h"
 using namespace std;
