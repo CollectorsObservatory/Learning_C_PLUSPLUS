@@ -1,3 +1,19 @@
+/**
+ * @file Bank_management.cpp
+ * @author CollectorsObservatory (GitHub username)
+ * @date 2023-10-15 (please update the date accordingly)
+ *
+ * @brief This source file implements a basic bank account management system.
+ *
+ * The file defines classes for managing bank accounts, supporting account creation,
+ * money deposit, withdrawal, and account information viewing. A random number generation
+ * method is used to create unique account numbers. A separate class for displaying 
+ * account information is included, although its implementation is not yet complete.
+ *
+ * Account management is facilitated using a map, though dynamic implementation for 
+ * updating and storing client information is not yet operational. Additional work 
+ * is needed to effectively handle multiple accounts and to fully implement all features.
+ */
 #include <iostream>
 #include <map>
 #include <ctime>
