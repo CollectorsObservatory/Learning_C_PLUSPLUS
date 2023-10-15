@@ -1,6 +1,13 @@
 /**
  * \file Apollo_calculator.cpp
- * \brief
+ * \brief This file implements a basic and scientific calculator named Apollo Calculator.
+ *        The basic calculator supports addition, subtraction, multiplication, and division operations.
+ *        The scientific calculator extends the functionalities to include trigonometric and exponential
+ *        operations. Users interact with Apollo Calculator through a command-line interface, entering
+ *        their choice of operation and inputs to perform calculations. The Calculator class encapsulates
+ *        the core functionalities and operations, demonstrating an application of OOP concepts in C++.
+ *        The application is user-friendly, offering a repeat operation feature and clear error messages 
+ *        for better user experience.
  * \author Fares Majdoub
  */
 # include <iostream>
