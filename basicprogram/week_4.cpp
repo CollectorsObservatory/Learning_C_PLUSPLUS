@@ -1,3 +1,13 @@
+/**
+ * \file main.cpp
+ * \brief A comprehensive file demonstrating a variety of C++ concepts and practices including 
+ *        the use of pointers, templates, vectors, arrays, and maps. Also included are examples 
+ *        of infinite user input handling, dynamic vector creation, and basic array and vector 
+ *        operations. This is a general review for weeks 3 and 4 of learning C++.
+ * \author collectorsObservatory
+ * \date 2023-10-01
+ */
+
 # include <iostream>
 # include <array>
 # include <vector>
