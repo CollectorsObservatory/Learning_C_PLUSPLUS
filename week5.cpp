@@ -1,3 +1,16 @@
+/**
+ * \file main.cpp
+ * \brief This program demonstrates the usage of various C++ concepts including classes, 
+ *        destructors, the 'this' keyword, const in methods, and static functions. 
+ *        In this file, three classes - Name, Cryptowallet, and Math - are defined, each 
+ *        showcasing different features. The Name class utilizes the 'this' keyword to 
+ *        distinguish between class members and constructor parameters. Cryptowallet 
+ *        demonstrates the use of const with member functions to ensure they do not modify 
+ *        class data. The Math class features a static member function that can be invoked 
+ *        without creating a class instance. 
+ * \author collectorsObservatory
+ * \date 2023-10-08
+ */
 #include <iostream>
 #include <string>
 
