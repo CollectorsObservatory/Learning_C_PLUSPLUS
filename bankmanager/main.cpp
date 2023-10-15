@@ -1,7 +1,7 @@
 /**
  * @file Bank_management.cpp
- * @author CollectorsObservatory (GitHub username)
- * @date 2023-10-15 (please update the date accordingly)
+ * @author CollectorsObservatory 
+ * @date 2023-10-15 
  *
  * @brief This source file implements a basic bank account management system.
  *
