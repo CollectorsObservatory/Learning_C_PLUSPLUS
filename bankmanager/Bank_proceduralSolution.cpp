@@ -151,9 +151,9 @@ void special_info_display2(long long number){
 
 void deposit_money(string holdername, double amount){
     auto it = clientinfo.find(holdername);
-    double new_amount = accountbalance[clientinfo[holdername]] + amount;
-    accountbalance[clientinfo[holdername]] = new_amount ;
     if (it != clientinfo.end()){
+        double new_amount = accountbalance[clientinfo[holdername]] + amount;
+        accountbalance[clientinfo[holdername]] = new_amount ;
         cout << "iBankManager Has successfully found the account" << endl;
         cout << "Current Account Number is "<< clientinfo[holdername] << endl ;
         cout << "Current balance is " << accountbalance[clientinfo[holdername]] <<"$"<< endl; 
@@ -162,6 +162,7 @@ void deposit_money(string holdername, double amount){
         cout << "Failed to find Bank account" << endl;
     }
 }
+
 
 void withdraw_money(string holdername, double amount){
     auto it = clientinfo.find(holdername);
@@ -286,5 +287,7 @@ int main(void){
             cout << "Invalid choice please try again" <<endl;
             continue ;
         }
+        }
 
-    return 0;}
+    return 0;
+    }
