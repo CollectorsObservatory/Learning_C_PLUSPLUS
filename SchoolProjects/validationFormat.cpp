@@ -1,3 +1,38 @@
+/**
+ * @file validationFormat.cpp
+ * 
+ * Ce fichier contient des fonctions permettant de valider des formats spécifiques de données,
+ * notamment les numéros de téléphone et les numéros du Régime d'Assurance Maladie du Québec (RAMQ).
+ * Il inclut les fonctions `validerFormatTelephone` et `validerFormatNumRAMQ` ainsi que les
+ * fonctions auxiliaires `isdigit` et `isalpha` pour la validation de caractères.
+ * 
+ * Fonctions:
+ *   - bool isdigit(char d) : Vérifie si un caractère donné est un chiffre (0-9).
+ *   - bool isalpha(char c) : Vérifie si un caractère donné est une lettre alphabétique.
+ * 
+ *   - bool validerFormatTelephone(const string& p_telephone) :
+ *       Valide un numéro de téléphone selon le format canadien. Les numéros doivent être
+ *       dans le format "XXX-XXX-XXXX", où X représente un chiffre. Cette fonction vérifie également
+ *       la validité des codes régionaux et traite les numéros de services payants (commençant par 9).
+ * 
+ *   - bool validerFormatNumRAMQ(const string& p_numero, const string& p_nom, const string& p_prenom,
+ *                               int p_jourNaissance, int p_moisNaissance, int p_anneeNaissance, char p_sex) :
+ *       Valide le format du numéro de RAMQ qui est construit à partir de certaines lettres du nom,
+ *       du prénom de l'individu, de sa date de naissance, et de son sexe. La fonction traite différemment
+ *       les mois de naissance selon le sexe de l'individu (ajout de 50 pour les femmes).
+ *
+ * Utilisation:
+ *   - Les fonctions de ce fichier sont utiles pour la validation des formats de données dans des applications
+ *     nécessitant une vérification rigoureuse de l'intégrité des numéros de téléphone et des numéros de RAMQ,
+ *     notamment dans des systèmes de gestion de patients, de réservation, ou de service client.
+ * 
+ * Remarques:
+ *   - Ces fonctions sont spécifiquement adaptées aux formats canadiens et ne sont pas nécessairement
+ *     applicables pour d'autres pays ou d'autres systèmes de numérotation.
+ *   - L'implémentation suppose que le format et les règles de validation ne changent pas, ce qui pourrait
+ *     ne pas être le cas sur une longue période.
+ */
+
 #include <iostream>
 #include "validationFormat.h"
 using namespace std;
