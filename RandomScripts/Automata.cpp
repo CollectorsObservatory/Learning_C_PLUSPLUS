@@ -5,7 +5,7 @@
 #include <cctype>
 
 using namespace std ;
-//NOTE : STILL HAS SOME ISSUES TO FIX
+//NOTE : STILL HAS SOME ISSUES TO FIX - FIXED ON FILE CALLED NEW AUTO.CPP SAME DIRECTORY
 
 /**
  * /brief function for a^nb^n language 
